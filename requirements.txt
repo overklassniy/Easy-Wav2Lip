@@ -1,8 +1,5 @@
 ipython
 moviepy
-# dlib
-# basicsr
-# gfpgan
 batch-face
 librosa
 gradio

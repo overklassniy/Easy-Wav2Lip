@@ -21,9 +21,17 @@ def download_and_initialize_models() -> None:
     working_directory: str = os.getcwd()
     logger.info("Downloading Wav2Lip essentials")
 
+    # Download mobilenet.pth
+    load_file_from_url(
+        url="https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/mobilenet.pth",
+        model_dir="checkpoints",
+        progress=True,
+        file_name="mobilenet.pth",
+    )
+
     # Download Wav2Lip_GAN.pth and load the model
     load_file_from_url(
-        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/Wav2Lip_GAN.pth",
+        url="https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/Wav2Lip_GAN.pth",
         model_dir="checkpoints",
         progress=True,
         file_name="Wav2Lip_GAN.pth",
@@ -34,7 +42,7 @@ def download_and_initialize_models() -> None:
 
     # Download Wav2Lip.pth and load the model
     load_file_from_url(
-        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/Wav2Lip.pth",
+        url="https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/Wav2Lip.pth",
         model_dir="checkpoints",
         progress=True,
         file_name="Wav2Lip.pth",
@@ -46,7 +54,7 @@ def download_and_initialize_models() -> None:
     # Download GFPGAN essentials and initialize the GFPGAN model
     logger.info("Downloading GFPGAN essentials")
     load_file_from_url(
-        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/GFPGANv1.4.pth",
+        url="https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/GFPGANv1.4.pth",
         model_dir="checkpoints",
         progress=True,
         file_name="GFPGANv1.4.pth",
@@ -63,7 +71,7 @@ def initialize_face_detectors() -> None:
     """
     logger.info("Initializing face detectors")
     load_file_from_url(
-        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/shape_predictor_68_face_landmarks_GTX.dat",
+        url="https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/shape_predictor_68_face_landmarks_GTX.dat",
         model_dir="checkpoints",
         progress=True,
         file_name="shape_predictor_68_face_landmarks_GTX.dat",

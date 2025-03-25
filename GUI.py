@@ -23,7 +23,7 @@ try:
         version: str = file.read().strip()
 except FileNotFoundError:
     logger.error("Easy-Wav2Lip does not appear to have installed correctly. "
-                 "Please try to install it again: https://github.com/anothermartz/Easy-Wav2Lip/issues")
+                 "Please try to install it again: https://github.com/overklassniy/Easy-Wav2Lip/issues")
     input("Press Enter to exit...")
     exit()
 
@@ -155,7 +155,7 @@ def open_github_link() -> None:
     """
     Open the Easy-Wav2Lip GitHub page in the default web browser.
     """
-    webbrowser.open("https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#advanced-tweaking")
+    webbrowser.open("https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#advanced-tweaking")
     logger.info("Opened GitHub page for advanced tweaking.")
 
 

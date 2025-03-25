@@ -373,7 +373,7 @@ def main() -> NoReturn:
                 logger.info(f"Execution time: {format_time(elapsed_time)}")
                 break
             else:
-                logger.error("Processing failed during preview! Please check GitHub issues: https://github.com/anothermartz/Easy-Wav2Lip/issues")
+                logger.error("Processing failed during preview! Please check GitHub issues: https://github.com/overklassniy/Easy-Wav2Lip/issues")
                 sys.exit(1)
 
         if os.path.isfile(temp_output):
@@ -387,7 +387,7 @@ def main() -> NoReturn:
             elapsed_time = end_time - start_time
             logger.info(f"Execution time: {format_time(elapsed_time)}")
         else:
-            logger.error("Processing failed! Please check GitHub issues: https://github.com/anothermartz/Easy-Wav2Lip/issues")
+            logger.error("Processing failed! Please check GitHub issues: https://github.com/overklassniy/Easy-Wav2Lip/issues")
             process_failed = True
 
         if not batch_process:

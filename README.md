@@ -1,14 +1,14 @@
 ## Contents:
-1. [Introduction](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#easy-wav2lip-improves-wav2lip-video-lipsyncing-making-it)
-2. [Google Colab version (free cloud computing in-browser)](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#google-colab)
-3. [Local Installation](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#local-installation)
-4. [Support](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#support)
-5. [Best Practices](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#best-practices)
+1. [Introduction](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#easy-wav2lip-improves-wav2lip-video-lipsyncing-making-it)
+2. [Google Colab version (free cloud computing in-browser)](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#google-colab)
+3. [Local Installation](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#local-installation)
+4. [Support](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#support)
+5. [Best Practices](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#best-practices)
 # Easy-Wav2Lip improves Wav2Lip video lipsyncing making it:
 
 ## Easier:
 * Simple setup and execution - locally and via colab.
-     * no messing around manually downloading and installing prerequesits
+     * no messing around manually downloading and installing prerequisites
      * Google Colab has only 2 cells to execute
      * Windows users only need one file to install, update and run.
 * Well documented options below.
@@ -31,34 +31,34 @@ The tracking data is saved between generations of the same video, saving even mo
 
 Easy-Wav2Lip fixes visual bugs on the lips:
 
-[![Comparison gif](https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/wav2lipcomparison.gif)](https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/wav2lipcomparison.gif)
+[![Comparison gif](https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/wav2lipcomparison.gif)](https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/wav2lipcomparison.gif)
 
 3 Options for Quality:
 * Fast: Wav2Lip
 * Improved: Wav2Lip with a feathered mask around the mouth to restore the original resolution for the rest of the face
 * Enhanced: Wav2Lip + mask + GFPGAN upscaling done on the face
 
-[![Comparison gif](https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/JPComparison.gif)](https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/JPComparison.gif)
+[![Comparison gif](https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/JPComparison.gif)](https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/JPComparison.gif)
 
 
 # Installation:
 
 ### For the easiest and most compatible way to use this tool, use the Google Colab version:
 
-### Google Colab:
-[https://colab.research.google.com/github/anothermartz/Easy-Wav2Lip/blob/v8.3/Easy_Wav2Lip_v8.3.ipynb](https://colab.research.google.com/github/anothermartz/Easy-Wav2Lip/blob/v8.3/Easy_Wav2Lip_v8.3.ipynb)
+### Google Colab (NOT UPDATE):
+[https://colab.research.google.com/github/overklassniy/Easy-Wav2Lip/blob/v8.3/Easy_Wav2Lip_v8.3.ipynb](https://colab.research.google.com/github/overklassniy/Easy-Wav2Lip/blob/v8.3/Easy_Wav2Lip_v8.3.ipynb)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/anothermartz/Easy-Wav2Lip/blob/v8.3/Easy_Wav2Lip_v8.3.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/overklassniy/Easy-Wav2Lip/blob/v8.3/Easy_Wav2Lip_v8.3.ipynb)
 
 ## Local Installation:
-Requirements:
-    Nvidia card that supports cuda 12.2
-    Or
+Requirements:  
+    Nvidia card that supports cuda 12.6  
+    or  
     MacOS device that supports mps via Apple silicon or AMD GPU
 
 
-### Automatic installation for Windows 64-bit and x86 processor:
-1. Download [Easy-Wav2Lip.bat](https://github.com/anothermartz/Easy-Wav2Lip/blob/Installers/Easy-Wav2Lip.bat)
+### Automatic installation for Windows 64-bit and x86 processor (NOT UPDATED):
+1. Download [Easy-Wav2Lip.bat](https://github.com/overklassniy/Easy-Wav2Lip/blob/Installers/Easy-Wav2Lip.bat)
 2. Place it in a folder on your PC (EG: in Documents)
 3. Run it and follow the instructions. It will make a folder called Easy-Wav2Lip within whatever folder you run it from.
 4. Run this file whenever you want to use Easy-Wav2Lip
@@ -67,9 +67,9 @@ This should handle the installation of all required components.
 
 ### Manual installation:
 1. Make sure the following are installed and can be accessed via your terminal:
-      * Python 3.10 (I have only tested [3.10.11](https://www.python.org/ftp/python/3.10.11/) - other versions may not work!)
+      * Python 3.13.2 - other versions may not work!)
       * [Git](https://git-scm.com/)
-      * Windows & Linux: Cuda (Just having the latest Nvidia drivers will do this, I have only tested 12.2)
+      * Windows & Linux: Cuda (Just having the latest Nvidia drivers will do this, I have only tested 12.6)
 
 2. Run the following in your terminal once you've navigated to the folder you want to install Easy-Wav2Lip:
 
@@ -79,68 +79,36 @@ Sets up a venv, installs ffmpeg to it and then installs Easy-Wav2Lip:
 EG:
 `cd Documents`
 
-2. Copy and paste the following code into your cmd window:
+2. Copy and paste the following code into your cmd window:  
 Note: 2 folders will be made in this location: Easy-Wav2Lip and Easy-Wav2Lip-venv (an isolated python install)
-```
+```bash
 py -3.13 -m venv EW2L_venv
 EW2L_venv\Scripts\activate
 python -m pip install --upgrade pip
 python -m pip install requests
-set url=https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip
-python -c "import requests; r = requests.get('%url%', stream=True); open('ffmpeg.zip', 'wb').write(r.content)"
+python -c "import requests; r = requests.get('https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip', stream=True); open('ffmpeg.zip', 'wb').write(r.content)"
 powershell -Command "Expand-Archive -Path .\\ffmpeg.zip -DestinationPath .\\"
 xcopy /e /i /y "ffmpeg-master-latest-win64-gpl\bin\*" .\EW2L_venv\Scripts
 del ffmpeg.zip
 rmdir /s /q ffmpeg-master-latest-win64-gpl
 python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
-git clone https://github.com/anothermartz/Easy-Wav2Lip.git
+pip install "https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/dlib-19.24.6-cp313-cp313-win_amd64.whl"
+pip install "https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/basicsr-1.4.2-py3-none-any.whl"
+pip install "https://github.com/overklassniy/Easy-Wav2Lip/releases/download/Prerequisites/gfpgan-1.3.8-py3-none-any.whl"
+git clone https://github.com/overklassniy/Easy-Wav2Lip.git
 cd Easy-Wav2Lip
 pip install -r requirements.txt
 python install.py
 ```
-Now to run Easy-Wav2Lip:<br>
-    3. Close and reopen cmd then cd to the same directory as in Step 1.<br>
+Now to run Easy-Wav2Lip:  
+    3. Close and reopen cmd then cd to the same directory as in Step 1.  
     4. Paste the following code:
 ```
 Easy-Wav2Lip-venv\Scripts\activate
 cd Easy-Wav2Lip
-call run_loop.bat
+python GUI.py
 ```
-See [Usage](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#usage) for further instructions.
-
-### MacOS and Linux installation (untested):
-Sets up a venv, installs ffmpeg to it and then installs Easy-Wav2Lip:
-1. Open Terminal and navigate to the folder you want to insteall Easy0Wav2Kip using cd
-EG:
-`cd ~/Documents`
-
-2. Copy and paste the following code into your terminal window:
-Note: 2 folders will be made in this location: Easy-Wav2Lip and Easy-Wav2Lip-venv (an isolated python install)
-```
-python3.10 -m venv Easy-Wav2Lip-venv
-source EW2Lvenv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install requests
-for file in ffmpeg ffprobe ffplay; do
-    curl -O "https://evermeet.cx/ffmpeg/${file}-6.1.1.zip"
-    unzip "${file}-6.1.1.zip"
-done
-mv -f ffmpeg ffprobe ffplay /Easy-Wav2Lip-venv/bin/
-rm -f ffmpeg-6.1.1.zip ffprobe-6.1.1.zip ffplay-6.1.1.zip
-source EW2Lvenv/bin/activate
-git clone https://github.com/anothermartz/Easy-Wav2Lip.git
-cd Easy-Wav2Lip
-pip install -r requirements.txt
-python install.py
-```
-Now to run Easy-Wav2Lip:<br>
-3. Close and reopen terminal then cd to the same directory as in Step 1.<br>
-4. Paste the following code:
-```
-source Easy-Wav2Lip-venv/bin/activate
-cd Easy-Wav2Lip
-./run_loop.sh
-```
+See [Usage](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#usage) for further instructions.
 
 ## Usage:
 * Once everything is installed, a file called config.ini should pop up.
@@ -151,8 +119,8 @@ cd Easy-Wav2Lip
        
 * Save config.ini and close it, this will start the Wav2Lip process and your file will be saved in the same directory as your video_path file.
 * config.ini will open again and you can change inputs and settings.
-* See [Best Practices](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#best-practices) below for tips on how to get started.
-* See [Advanced Tweaking](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#advanced-tweaking) below for the explanation of the settings not already explained in config.ini
+* See [Best Practices](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#best-practices) below for tips on how to get started.
+* See [Advanced Tweaking](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#advanced-tweaking) below for the explanation of the settings not already explained in config.ini
 
 # Credits:
 * [The Original Wav2Lip](https://github.com/Rudrabha/Wav2Lip) of course.
@@ -162,7 +130,7 @@ cd Easy-Wav2Lip
 * Thanks to [JustinJohn](https://github.com/justinjohn0306) for making the [Wav2Lip_simplified](https://colab.research.google.com/github/justinjohn0306/Wav2Lip/blob/master/Wav2Lip_simplified_v5.ipynb) colabs which inspired me to make my own, even simpler version.
 
 ## Support
-If you're having issues running this, please look through the [issues tab](https://github.com/anothermartz/Easy-Wav2Lip/issues) to see if someone has written about it. If not, make a new thread but make sure you include the following:<br>
+If you're having issues running this, please look through the [issues tab](https://github.com/overklassniy/Easy-Wav2Lip/issues) to see if someone has written about it. If not, make a new thread but make sure you include the following:<br>
  <br> **If colab:**
  - Easy-Wav2Lip colab version number
  - Info about the files used.
@@ -177,7 +145,7 @@ If you're having issues running this, please look through the [issues tab](https
 
 Without this info, I'll just ask for it anyway and so a response about the issue itself will take longer.
 
-Chances are that if any of those are different from [the requirements](https://github.com/anothermartz/Easy-Wav2Lip?tab=readme-ov-file#local-installation) then that's the reason it's not working and you may just have to use the colab version if not already.
+Chances are that if any of those are different from [the requirements](https://github.com/overklassniy/Easy-Wav2Lip?tab=readme-ov-file#local-installation) then that's the reason it's not working and you may just have to use the colab version if not already.
 
 For general chit chat about this and any other lipsync talk, I'll be in this discord:<br>
 Invite link: https://discord.gg/FNZR9ETwKY<br>
