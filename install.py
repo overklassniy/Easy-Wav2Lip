@@ -1,96 +1,102 @@
-version = 'v8.3'
-
 import os
-import re
-import argparse
-import shutil
-import subprocess
-from IPython.display import clear_output
-
-from easy_functions import (format_time,
-                            load_file_from_url,
-                            load_model,
-                            load_predictor)
-                            # Get the location of the basicsr package
-import os
-import shutil
-import subprocess
-import warnings
-
-warnings.filterwarnings("ignore", category=UserWarning, module="torchvision.transforms.functional_tensor")
-
-# Get the location of the basicsr package
-def get_basicsr_location():
-    result = subprocess.run(['pip', 'show', 'basicsr'], capture_output=True, text=True)
-    for line in result.stdout.split('\n'):
-        if 'Location: ' in line:
-            return line.split('Location: ')[1]
-    return None
-
-# Move and replace a file to the basicsr location
-def move_and_replace_file_to_basicsr(file_name):
-    basicsr_location = get_basicsr_location()
-    if basicsr_location:
-        destination = os.path.join(basicsr_location, file_name)
-        # Move and replace the file
-        shutil.copyfile(file_name, destination)
-        print(f'File replaced at {destination}')
-    else:
-        print('Could not find basicsr location.')
-
-# Example usage
-file_to_replace = 'degradations.py'  # Replace with your file name
-move_and_replace_file_to_basicsr(file_to_replace)
-
+from typing import NoReturn
 
 from enhance import load_sr
+from utils.basic import load_file_from_url, load_model, load_predictor
+from utils.logger import get_logger
 
-working_directory = os.getcwd()
+# Initialize logger
+logger = get_logger()
 
-# download and initialize both wav2lip models
-print("downloading wav2lip essentials")
-load_file_from_url(
-    url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/Wav2Lip_GAN.pth",
-    model_dir="checkpoints",
-    progress=True,
-    file_name="Wav2Lip_GAN.pth",
-)
-model = load_model(os.path.join(working_directory, "checkpoints", "Wav2Lip_GAN.pth"))
-print("wav2lip_gan loaded")
-load_file_from_url(
-    url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/Wav2Lip.pth",
-    model_dir="checkpoints",
-    progress=True,
-    file_name="Wav2Lip.pth",
-)
-model = load_model(os.path.join(working_directory, "checkpoints", "Wav2Lip.pth"))
-print("wav2lip loaded")
+# Global version string
+version: str = "v9.0"
 
-# download gfpgan files
-print("downloading gfpgan essentials")
-load_file_from_url(
-    url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/GFPGANv1.4.pth",
-    model_dir="checkpoints",
-    progress=True,
-    file_name="GFPGANv1.4.pth",
-)
-load_sr()
 
-# load face detectors
-print("initializing face detectors")
-load_file_from_url(
-    url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/shape_predictor_68_face_landmarks_GTX.dat",
-    model_dir="checkpoints",
-    progress=True,
-    file_name="shape_predictor_68_face_landmarks_GTX.dat",
-)
+def download_and_initialize_models() -> None:
+    """Download and initialize the Wav2Lip and GFPGAN models.
 
-load_predictor()
+    This function downloads the required model files for Wav2Lip (both GAN and standard versions)
+    and GFPGAN, then initializes them using the provided utility functions.
+    """
+    working_directory: str = os.getcwd()
+    logger.info("Downloading Wav2Lip essentials")
 
-# write a file to signify setup is done
-with open("installed.txt", "w") as f:
-    f.write(version)
-print("Installation complete!")
-print(
-    "If you just updated from v8 - make sure to download the updated Easy-Wav2Lip.bat too!"
-)
+    # Download Wav2Lip_GAN.pth and load the model
+    load_file_from_url(
+        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/Wav2Lip_GAN.pth",
+        model_dir="checkpoints",
+        progress=True,
+        file_name="Wav2Lip_GAN.pth",
+    )
+    model_path_gan: str = os.path.join(working_directory, "checkpoints", "Wav2Lip_GAN.pth")
+    model_gan = load_model(model_path_gan)
+    logger.info("Wav2Lip_GAN model loaded successfully")
+
+    # Download Wav2Lip.pth and load the model
+    load_file_from_url(
+        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/Wav2Lip.pth",
+        model_dir="checkpoints",
+        progress=True,
+        file_name="Wav2Lip.pth",
+    )
+    model_path: str = os.path.join(working_directory, "checkpoints", "Wav2Lip.pth")
+    model = load_model(model_path)
+    logger.info("Wav2Lip model loaded successfully")
+
+    # Download GFPGAN essentials and initialize the GFPGAN model
+    logger.info("Downloading GFPGAN essentials")
+    load_file_from_url(
+        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/GFPGANv1.4.pth",
+        model_dir="checkpoints",
+        progress=True,
+        file_name="GFPGANv1.4.pth",
+    )
+    load_sr()  # Initialize GFPGAN model
+    logger.info("GFPGAN model loaded successfully")
+
+
+def initialize_face_detectors() -> None:
+    """Download and initialize face detectors.
+
+    This function downloads the shape predictor file used for face landmark detection and
+    initializes the predictor.
+    """
+    logger.info("Initializing face detectors")
+    load_file_from_url(
+        url="https://github.com/anothermartz/Easy-Wav2Lip/releases/download/Prerequesits/shape_predictor_68_face_landmarks_GTX.dat",
+        model_dir="checkpoints",
+        progress=True,
+        file_name="shape_predictor_68_face_landmarks_GTX.dat",
+    )
+    load_predictor()
+    logger.info("Face predictor loaded successfully")
+
+
+def write_installation_file(version_str: str) -> None:
+    """Write a file to signify that the installation is complete.
+
+    Args:
+        version_str (str): The version string to write into the file.
+    """
+    with open("installed", "w") as f:
+        f.write(version_str)
+    logger.info("Installation complete. Installed version: " + version_str)
+
+
+def main() -> NoReturn:
+    """Main installation procedure for Easy-Wav2Lip.
+
+    Downloads and initializes all required models and predictors, writes an installation marker file,
+    and logs completion messages.
+    """
+    download_and_initialize_models()
+    initialize_face_detectors()
+    write_installation_file(version)
+    logger.info("Installation complete!")
+    logger.info("If you just updated from v8 - make sure to download the updated Easy-Wav2Lip.bat too!")
+    # Exit the script
+    exit()
+
+
+if __name__ == "__main__":
+    main()

@@ -82,16 +82,17 @@ EG:
 2. Copy and paste the following code into your cmd window:
 Note: 2 folders will be made in this location: Easy-Wav2Lip and Easy-Wav2Lip-venv (an isolated python install)
 ```
-py -3.10 -m venv Easy-Wav2Lip-venv
-Easy-Wav2Lip-venv\Scripts\activate
+py -3.13 -m venv EW2L_venv
+EW2L_venv\Scripts\activate
 python -m pip install --upgrade pip
 python -m pip install requests
 set url=https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip
 python -c "import requests; r = requests.get('%url%', stream=True); open('ffmpeg.zip', 'wb').write(r.content)"
 powershell -Command "Expand-Archive -Path .\\ffmpeg.zip -DestinationPath .\\"
-xcopy /e /i /y "ffmpeg-master-latest-win64-gpl\bin\*" .\Easy-Wav2Lip-venv\Scripts
+xcopy /e /i /y "ffmpeg-master-latest-win64-gpl\bin\*" .\EW2L_venv\Scripts
 del ffmpeg.zip
 rmdir /s /q ffmpeg-master-latest-win64-gpl
+python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 git clone https://github.com/anothermartz/Easy-Wav2Lip.git
 cd Easy-Wav2Lip
 pip install -r requirements.txt
