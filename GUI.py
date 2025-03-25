@@ -165,7 +165,7 @@ def build_interface() -> None:
     """
     config = read_config()
 
-    with gr.Blocks() as demo:
+    with gr.Blocks(title="EW2L") as demo:
         gr.Markdown(f"# Easy-Wav2Lip GUI\n\n**Version:** {version}")
 
         # Column for video and audio upload with fixed dimensions
@@ -297,6 +297,8 @@ def build_interface() -> None:
             ],
             outputs=output_message,
         )
+
+        webbrowser.open("http://127.0.0.1:7860")
 
         # Launch the interface with parameters to suppress unnecessary messages and errors.
         demo.launch(
