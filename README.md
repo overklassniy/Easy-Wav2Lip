@@ -195,9 +195,9 @@ Automate the processing of multiple video and/or audio files:
 ---
 
 ## Credits
-- [Original Easy-Wav2Lip](https://github.com/anothermartz/Easy-Wav2Lip).
 - [Original Wav2Lip](https://github.com/Rudrabha/Wav2Lip).
 - The significant speed boost and improved base quality come from [cog-Wav2Lip](https://github.com/devxpy/cog-Wav2Lip).
 - Face upscaling using [GFPGAN](https://github.com/TencentARC/GFPGAN) (based on [wav2lip-hq-updated-ESRGAN](https://github.com/GucciFlipFlops1917/wav2lip-hq-updated-ESRGAN)).
 - Special thanks to AI assistance (Bing, Copilot, ChatGPT, Grok) for support during development.
 - Shoutout to [JustinJohn](https://github.com/justinjohn0306) for the inspiration from the [Wav2Lip_simplified](https://colab.research.google.com/github/justinjohn0306/Wav2Lip/blob/master/Wav2Lip_simplified_v5.ipynb) Colab notebooks.
+- [Original Easy-Wav2Lip](https://github.com/anothermartz/Easy-Wav2Lip).
