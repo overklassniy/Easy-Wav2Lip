@@ -101,7 +101,7 @@ def main() -> NoReturn:
     initialize_face_detectors()
     write_installation_file(version)
     logger.info("Installation complete!")
-    logger.info("If you just updated from v8 - make sure to download the updated Easy-Wav2Lip.bat too!")
+    logger.info("If you just updated from v8 - make sure to download the updated Easy-Wav2Lip.cmd too!")
     # Exit the script
     exit()
 

@@ -44,7 +44,7 @@
 ## Google Colab Version
 For the easiest and most compatible experience, we recommend using the Google Colab version:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/overklassniy/Easy-Wav2Lip/blob/v9.0/Easy_Wav2Lip_v9.0.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/overklassniy/Easy-Wav2Lip/blob/v9.0/notebooks/Easy_Wav2Lip_v9.0.ipynb)
 
 ---
 
@@ -124,8 +124,6 @@ If you encounter any issues:
   - Information about the files used.
   - For local installations: whether you used EasyWav2Lip.cmd or manual installation, your operating system, GPU model, GPU driver version, Python version, and details about the files used.
 
-For general discussions about lip-syncing and related topics, join our [Discord server](https://discord.gg/FNZR9ETwKY).
-
 ---
 
 ## Best Practices
@@ -197,8 +195,9 @@ Automate the processing of multiple video and/or audio files:
 ---
 
 ## Credits
-- [Original Wav2Lip](https://github.com/Rudrabha/Wav2Lip)
-- The significant speed boost and improved base quality come from [cog-Wav2Lip](https://github.com/devxpy/cog-Wav2Lip)
-- Face upscaling using [GFPGAN](https://github.com/TencentARC/GFPGAN) (based on [wav2lip-hq-updated-ESRGAN](https://github.com/GucciFlipFlops1917/wav2lip-hq-updated-ESRGAN))
-- Special thanks to AI assistance (Bing Chat/Copilot) for support during development.
+- [Original Easy-Wav2Lip](https://github.com/anothermartz/Easy-Wav2Lip).
+- [Original Wav2Lip](https://github.com/Rudrabha/Wav2Lip).
+- The significant speed boost and improved base quality come from [cog-Wav2Lip](https://github.com/devxpy/cog-Wav2Lip).
+- Face upscaling using [GFPGAN](https://github.com/TencentARC/GFPGAN) (based on [wav2lip-hq-updated-ESRGAN](https://github.com/GucciFlipFlops1917/wav2lip-hq-updated-ESRGAN)).
+- Special thanks to AI assistance (Bing, Copilot, ChatGPT, Grok) for support during development.
 - Shoutout to [JustinJohn](https://github.com/justinjohn0306) for the inspiration from the [Wav2Lip_simplified](https://colab.research.google.com/github/justinjohn0306/Wav2Lip/blob/master/Wav2Lip_simplified_v5.ipynb) Colab notebooks.
